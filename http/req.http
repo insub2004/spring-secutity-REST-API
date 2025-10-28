@@ -1,0 +1,35 @@
+### 멤버조회
+#GET localhost:8080/me
+#Accept: text/csv
+#
+#### 멤버생성
+#POST localhost:8080/members
+#Content-Type: application/json
+#
+#{
+#  "name" : "신건영",
+#  "age" : 20,
+#  "class" : "a"
+#}
+
+#### 아규먼트 리졸버
+#GET localhost:8080/me
+#Accept-Language: en
+#
+#### req-param
+#GET localhost:8080/req-param?a=2&b=4
+#
+#### page 정상
+#GET localhost:8080/page?page=23&size=60
+#
+#### page null 값
+#GET localhost:8080/page?page=&size=
+#
+#### page 숫자 말고 문자열
+#GET localhost:8080/page?page=abc&size=abc
+
+###
+POST http://localhost:8080/send
+Accept: application/json
+
+###

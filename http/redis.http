@@ -1,0 +1,36 @@
+### 멤버1 생성
+POST localhost:8080/members
+Content-Type: application/json
+
+{
+  "id" : "sub2004",
+  "name" : "Yoon",
+  "age" : 30,
+  "class": "A",
+  "role": "ADMIN",
+  "password": "asd123"
+}
+
+###
+POST localhost:8080/members
+Content-Type: application/json
+
+{
+"id" : "ssss",
+"name" : "test",
+"age" : 25,
+"class": "B",
+"role": "MEMBER",
+"password": "asd123"
+}
+
+### 단건 조회
+GET localhost:8080/member?id=sub2004
+Accept: application/json
+
+### 전체 조회
+GET localhost:8080/members
+Accept: application/json
+
+### 삭제
+DELETE localhost:8080/member?id=ssss
