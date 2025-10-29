@@ -10,6 +10,7 @@ import org.springframework.http.converter.HttpMessageConverter;
 import org.springframework.web.method.support.HandlerMethodArgumentResolver;
 import org.springframework.web.servlet.LocaleResolver;
 import org.springframework.web.servlet.config.annotation.ContentNegotiationConfigurer;
+import org.springframework.web.servlet.config.annotation.ViewControllerRegistry;
 import org.springframework.web.servlet.config.annotation.WebMvcConfigurer;
 import org.springframework.web.servlet.i18n.AcceptHeaderLocaleResolver;
 
@@ -51,6 +52,14 @@ public class WebConfig implements WebMvcConfigurer {
         AcceptHeaderLocaleResolver localeResolver = new AcceptHeaderLocaleResolver();
         localeResolver.setDefaultLocale(Locale.KOREAN);  // 기본 Locale 설정
         return localeResolver;
+    }
+
+    // security 인가 실습을 위해 추가
+    @Override
+    public void addViewControllers(ViewControllerRegistry registry) {
+        registry.addViewController("/admin/**").setViewName("admin");
+        registry.addViewController("/private-project/**").setViewName("private-project");
+        registry.addViewController("/public-project/**").setViewName("public-project");
     }
 
 }

@@ -31,7 +31,7 @@ public class RedisConfig {
     }
 
 
-    // 기존 코드
+    //기존 코드
 //    @Bean
 //    public RedisTemplate<String, Object> redisTemplate(RedisConnectionFactory redisConnectionFactory) {
 //        RedisTemplate<String, Object> sessionRedisTemplate = new RedisTemplate<>();
